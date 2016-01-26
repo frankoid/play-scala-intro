@@ -2,7 +2,9 @@ name := """play-scala-intro"""
 
 version := "1.0-SNAPSHOT"
 
-lazy val root = (project in file(".")).enablePlugins(PlayScala)
+lazy val root = (project in file(".")).
+  enablePlugins(PlayScala).
+  settings(updateOptions := updateOptions.value.withCachedResolution(true))
 
 scalaVersion := "2.11.7"
 // Don't allow libraryDependencies to upgrade Scala version
