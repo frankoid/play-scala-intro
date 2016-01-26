@@ -16,18 +16,16 @@ libraryDependencies ++= Seq(
   "org.sorm-framework" % "sorm" % "0.3.19",
   cache,
   ws,
-  specs2 % Test,
+  specs2 % Test
+)
 
-  // conflict resolution:
-  "org.scala-lang" % "scala-compiler" % scalaVersion.value, // (2.12.0-M3, 2.11.6)
-  "org.scala-lang" % "scala-library" % scalaVersion.value, // (2.11.6, 2.11.7)
-  "org.apache.httpcomponents" % "httpclient" % "4.3.4", // (4.0.1, 4.3.4)
-  "org.scala-lang" % "scala-reflect" % scalaVersion.value, // (2.11.7, 2.11.6)
-  "com.google.guava" % "guava" % "18.0", // (18.0, 16.0.1)
-  "org.apache.httpcomponents" % "httpcore" % "4.3.2", // (4.0.1, 4.3.2)
-  "commons-logging" % "commons-logging" % "1.1.3", // (1.1.1, 1.1.3)
-  "org.scala-lang.modules" % "scala-parser-combinators_2.11" % "1.0.3", // (1.0.1, 1.0.2, 1.0.3)
-  "org.scala-lang.modules" % "scala-xml_2.11" % "1.0.3" // (1.0.1, 1.0.2, 1.0.3)
+dependencyOverrides ++= Set(
+  "org.apache.httpcomponents" % "httpclient" % "4.3.4",
+  "com.google.guava" % "guava" % "18.0",
+  "org.apache.httpcomponents" % "httpcore" % "4.3.2",
+  "commons-logging" % "commons-logging" % "1.1.3",
+  "org.scala-lang.modules" % "scala-parser-combinators_2.11" % "1.0.4",
+  "org.scala-lang.modules" % "scala-xml_2.11" % "1.0.4"
 )
 
 resolvers += "scalaz-bintray" at "http://dl.bintray.com/scalaz/releases"
