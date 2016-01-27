@@ -18,6 +18,8 @@ libraryDependencies ++= Seq(
   "org.sorm-framework" % "sorm" % "0.3.19",
   cache,
   ws,
+  "org.webjars" %% "webjars-play" % "2.4.0-1",
+  "org.webjars" % "jquery" % "2.2.0",
   specs2 % Test
 )
 

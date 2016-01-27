@@ -1,3 +1,5 @@
+import com.gargoylesoftware.htmlunit.BrowserVersion
+import org.openqa.selenium.htmlunit.HtmlUnitDriver
 import org.specs2.mutable._
 import org.specs2.runner._
 import org.junit.runner._
@@ -14,11 +16,12 @@ class IntegrationSpec extends Specification {
 
   "Application" should {
 
-    "work from within a browser" in new WithBrowser {
+    "work from within a browser" in new WithBrowser(
+      webDriver = new HtmlUnitDriver(BrowserVersion.CHROME)) {
 
       browser.goTo("http://localhost:" + port)
 
-      browser.pageSource must contain("Hello Francis")
+      browser.pageSource must contain("Add Person")
     }
   }
 }

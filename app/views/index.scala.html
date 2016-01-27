@@ -2,6 +2,12 @@
 
 @main("Welcome to Play") {
 
+    @*<script src="@routes.Assets.versioned("javascripts/jquery.js")"></script>*@
+    <script type='text/javascript' src='@routes.WebJarAssets.at(WebJarAssets.locate("jquery.min.js"))'></script>
+    <script type='text/javascript' src='@routes.Assets.versioned("js/index.js")'></script>
+
+    <ul id="persons"></ul>
+
     <form action="@routes.Application.addPerson()" method="post">
         <input name="name" type="text">
         <button>Add Person</button>
